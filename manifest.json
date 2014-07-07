@@ -1,0 +1,29 @@
+{
+  "name": "GSA -> 18F!",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Replace GSA's logo with the 18F logo in Google Apps!",
+  "homepage_url": "https://18f.gsa.gov",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "default_locale": "en",
+  "permissions": [
+    "https://*.google.com/*"
+  ],
+  "web_accessible_resources": [
+	 "icons/logo.gif"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.google.com/*"
+      ],
+      "js": [
+		"src/inject/inject.js"
+      ]
+    }
+  ]
+}
